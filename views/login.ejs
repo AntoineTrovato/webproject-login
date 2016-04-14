@@ -1,0 +1,25 @@
+﻿<%- include('partials/header') %>
+<div class="form-container">
+    <h2>Connexion</h2>
+    <% if(locals.error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <% if(locals.success) { %>
+        <div class="alert alert-success"><%= success %></div>
+    <% } %>
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Nom de compte</label>
+            <input type="text" name="username" id="username" value="<%= locals.username || '' %>" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+            <a href="/register" class="btn btn-link">S'enregistrer</a>
+        </div>
+    </form>
+</div>
+<%- include('partials/footer') %>
